@@ -31,7 +31,7 @@ jobs:
       - name: Compile Java files
         run: |
           mkdir -p out
-          javac -cp "lib/*" -d out src/Message.java src/MessageTest.java
+          javac -cp "lib/*" -d out Message.java MessageTest.java
 
       - name: Run Tests
         run: |
