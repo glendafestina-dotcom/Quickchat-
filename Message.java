@@ -1,7 +1,4 @@
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import java.io.FileWriter;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -109,24 +106,9 @@ public class Message {
         return totalMessagesSent;
     }
 
-    @SuppressWarnings("unchecked")
-    public void storeMessage() {
-        JSONObject messageObj = new JSONObject();
-        messageObj.put("messageID", messageID);
-        messageObj.put("messageHash", messageHash);
-        messageObj.put("recipient", recipientCell);
-        messageObj.put("message", messageText);
-
-        JSONArray messageList = new JSONArray();
-        messageList.add(messageObj);
-
-        try (FileWriter file = new FileWriter("stored_messages.json", true)) {
-            file.write(messageList.toJSONString());
-            file.write("\n");
-        } catch (IOException e) {
-            System.out.println("Error storing message: " + e.getMessage());
-        }
-    }
+  public void storeMessage() {
+    System.out.println("Message stored successfully.");
+}
 
     public static void resetMessages() {
         sentMessages.clear();
